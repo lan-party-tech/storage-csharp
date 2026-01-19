@@ -234,7 +234,7 @@ namespace Supabase.Storage
             options ??= new FileOptions();
 
             if (inferContentType)
-                options.ContentType = MimeMapping.MimeUtility.GetMimeMapping(localFilePath);
+                options.ContentType = MimeMapping.GetMimeMapping(localFilePath);
 
             var result = await UploadOrUpdate(localFilePath, supabasePath, options, onProgress, cancellationToken);
             return result;
@@ -261,7 +261,7 @@ namespace Supabase.Storage
             options ??= new FileOptions();
 
             if (inferContentType)
-                options.ContentType = MimeMapping.MimeUtility.GetMimeMapping(supabasePath);
+                options.ContentType = MimeMapping.GetMimeMapping(supabasePath);
 
             var result = await UploadOrUpdate(data, supabasePath, options, onProgress, cancellationToken);
             return result;
@@ -287,7 +287,7 @@ namespace Supabase.Storage
             options ??= new FileOptions();
 
             if (inferContentType)
-                options.ContentType = MimeMapping.MimeUtility.GetMimeMapping(localFilePath);
+                options.ContentType = MimeMapping.GetMimeMapping(localFilePath);
 
             var headers = new Dictionary<string, string>(Headers)
             {
@@ -334,7 +334,7 @@ namespace Supabase.Storage
             options ??= new FileOptions();
 
             if (inferContentType)
-                options.ContentType = MimeMapping.MimeUtility.GetMimeMapping(signedUrl.Key);
+                options.ContentType = MimeMapping.GetMimeMapping(signedUrl.Key);
 
             var headers = new Dictionary<string, string>(Headers)
             {
