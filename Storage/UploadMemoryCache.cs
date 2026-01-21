@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Concurrent;
 using System.Threading;
-
-namespace Supabase.Storage;
-
+namespace Supabase.Storage
+{
 /// <summary>
 /// Provides thread-safe in-memory caching for resumable upload URLs with sliding expiration.
 /// </summary>
@@ -136,4 +135,5 @@ public class UploadMemoryCache
             }
         }
     }
+}
 }
